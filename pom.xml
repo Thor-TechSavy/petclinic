@@ -37,7 +37,7 @@
         </plugins>
     </build>
     <scm>
-        <developerConnection>scm:git:git@github.com:Thor-TechSavy/petclinic.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/springframeworkguru/pet-clinic.git</developerConnection>
       <tag>petclinic-0.0.1</tag>
   </scm>
 </project>
