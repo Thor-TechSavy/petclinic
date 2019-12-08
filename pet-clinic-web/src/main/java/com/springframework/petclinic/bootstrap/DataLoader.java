@@ -1,30 +1,32 @@
 package com.springframework.petclinic.bootstrap;
 
 import com.springframework.petclinic.model.*;
-import com.springframework.petclinic.services.OwnerService;
-import com.springframework.petclinic.services.PetTypeService;
-import com.springframework.petclinic.services.SpecialityService;
-import com.springframework.petclinic.services.VetService;
+import com.springframework.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+
 
 /**
  * Created by shivam (techSavyThor) on 05/12/2019
  */
 @Component
 public class DataLoader implements CommandLineRunner {
-   private final OwnerService ownerService;
-   private final VetService vetService;
-   private final PetTypeService petTypeService;
-   private final SpecialityService specialityService;
+    private final OwnerService ownerService;
+    private final VetService vetService;
+    private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
+    private final VisitService visitService;
+    private final PetService petService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService, PetService petService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
+        this.petService = petService;
     }
 
     @Override
@@ -65,15 +67,15 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("Baker street");
         owner1.setCity("London");
         owner1.setTelephone("12345");
+
+        Pet shivamsCat = new Pet();
+        shivamsCat.setPetType(savedCatPetType);
+        shivamsCat.setOwner(owner1);
+        shivamsCat.setBirthDate(LocalDate.now());
+        shivamsCat.setName("Milo");
+        owner1.getPets().add(shivamsCat);
+
         ownerService.save(owner1);
-
-        Pet shivamsPet=new Pet();
-        shivamsPet.setPetType(savedDogPetType);
-        shivamsPet.setOwner(owner1);
-        shivamsPet.setBirthDate(LocalDate.now());
-        shivamsPet.setName("Milo");
-        owner1.getPets().add(shivamsPet);
-
 
         Owner owner2 =new Owner();
         owner2.setFirstName("Thor");
@@ -81,14 +83,22 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("Stark Tower");
         owner2.setCity("New York");
         owner2.setTelephone("999999");
+
+        Pet thorsDog = new Pet();
+        thorsDog.setName("Tony");
+        thorsDog.setOwner(owner2);
+        thorsDog.setBirthDate(LocalDate.now());
+        thorsDog.setPetType(savedDogPetType);
+        owner2.getPets().add(thorsDog);
         ownerService.save(owner2);
 
-        Pet thorsPet=new Pet();
-        thorsPet.setPetType(savedCatPetType);
-        thorsPet.setOwner(owner2);
-        thorsPet.setBirthDate(LocalDate.now());
-        thorsPet.setName("Katie");
-        owner2.getPets().add(thorsPet);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(shivamsCat);
+        catVisit.setDescription("Sneezy Kitty");
+        catVisit.setLocalDate(LocalDate.now());
+
+        visitService.save(catVisit);
 
         System.out.println("Owner's loaded");
 

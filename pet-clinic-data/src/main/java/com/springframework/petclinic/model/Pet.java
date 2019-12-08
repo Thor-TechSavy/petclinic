@@ -1,7 +1,5 @@
 package com.springframework.petclinic.model;
 
-import org.hibernate.engine.internal.Cascade;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
