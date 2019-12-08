@@ -1,7 +1,6 @@
 package com.springframework.petclinic.services.map;
 
 import com.springframework.petclinic.model.Visit;
-import com.springframework.petclinic.repositories.VisitRepository;
 import com.springframework.petclinic.services.VisitService;
 import org.springframework.stereotype.Service;
 import java.util.Set;
