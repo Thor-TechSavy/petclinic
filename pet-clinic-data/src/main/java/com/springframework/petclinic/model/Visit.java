@@ -16,8 +16,7 @@ public class Visit extends BaseEntity {
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getLocalDate() {return localDate;
     }
 
     public void setLocalDate(LocalDate localDate) {
