@@ -1,8 +1,6 @@
 package com.springframework.petclinic.model;
 
 import lombok.*;
-import org.hibernate.engine.internal.Cascade;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
