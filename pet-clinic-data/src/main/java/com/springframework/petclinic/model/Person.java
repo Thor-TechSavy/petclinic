@@ -1,8 +1,17 @@
 package com.springframework.petclinic.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity {
     @Column(name = "first_name")
@@ -11,19 +20,9 @@ public class Person extends BaseEntity {
     @Column(name = "last_name")
     private String lastname;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    public Person(Long id, String firstName, String lastName) {
+        super(id);
         this.firstName = firstName;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastname = lastName;
     }
 }
