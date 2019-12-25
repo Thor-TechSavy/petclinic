@@ -1,3 +1,4 @@
+com\springframework\petclinic\model\Owner$OwnerBuilder.class
 com\springframework\petclinic\services\springDataJpa\PetSdJpaService.class
 com\springframework\petclinic\services\springDataJpa\PetTypeSdJpaService.class
 com\springframework\petclinic\model\Visit.class
@@ -7,12 +8,14 @@ com\springframework\petclinic\repositories\PetRepository.class
 com\springframework\petclinic\model\Owner.class
 com\springframework\petclinic\services\map\VetMapService.class
 com\springframework\petclinic\services\CrudService.class
+com\springframework\petclinic\model\PetType$PetTypeBuilder.class
 com\springframework\petclinic\services\OwnerService.class
 com\springframework\petclinic\services\map\OwnerMapService.class
 com\springframework\petclinic\services\springDataJpa\OwnerSdJpaService.class
 com\springframework\petclinic\repositories\PetTypeRepository.class
 com\springframework\petclinic\model\Vet.class
 com\springframework\petclinic\model\Person.class
+com\springframework\petclinic\model\Pet$PetBuilder.class
 com\springframework\petclinic\services\PetTypeService.class
 com\springframework\petclinic\services\map\AbstractMapService.class
 com\springframework\petclinic\services\VetService.class
@@ -25,10 +28,13 @@ com\springframework\petclinic\model\Speciality.class
 com\springframework\petclinic\repositories\OwnerRepository.class
 com\springframework\petclinic\services\map\SpecialityMapService.class
 com\springframework\petclinic\services\map\VisitMapService.class
+com\springframework\petclinic\model\Speciality$SpecialityBuilder.class
 com\springframework\petclinic\services\springDataJpa\VetSdJpaService.class
+com\springframework\petclinic\model\Vet$VetBuilder.class
 com\springframework\petclinic\services\map\PetMapService.class
 com\springframework\petclinic\services\PetService.class
 com\springframework\petclinic\services\map\PetTypeMapService.class
 com\springframework\petclinic\services\springDataJpa\SpecialitySdJpaService.class
 com\springframework\petclinic\repositories\VetRepository.class
 com\springframework\petclinic\model\PetType.class
+com\springframework\petclinic\model\Visit$VisitBuilder.class
